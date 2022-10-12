@@ -9,10 +9,25 @@ public class Disciple {
 		
 		do
 		{
-			long temp;
-			temp = (count * 2) + count;
-			count = temp;
-			yearCount++;
+			if(yearCount % 18 == 0)
+			{
+				long temp;
+				temp = (count * 2) + count;
+				count = temp;
+				yearCount++;
+				if(yearCount % 30 == 0)
+				{
+					total = total + 1;
+				}
+				if(yearCount % 72 == 0)
+				{
+					total = total - 1;
+				}
+			}
+			else
+			{
+				yearCount++;
+			}
 		}
 		while(count < total);
 		
