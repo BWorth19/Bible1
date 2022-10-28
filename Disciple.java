@@ -6,22 +6,41 @@ public class Disciple {
 		long count = 13;
 		long total = 7700000000L;
 		int yearCount = 0;
+		int random;
 		
 		do
 		{
 			if(yearCount % 18 == 0)
 			{
-				long temp;
-				temp = (count * 2) + count;
-				count = temp;
-				yearCount++;
-				if(yearCount % 30 == 0)
+				random = (int)Math.random() *2;
+
+				if(random == 1)
 				{
-					total = total + 1;
+
+					long temp;
+					temp = (count * 2) + count;
+					count = temp;
+					yearCount++;
+					if(yearCount % 30 == 0)
+					{
+						total = total + 1;
+					}
+					if(yearCount % 72 == 0)
+					{
+						total = total - 1;
+					}
 				}
-				if(yearCount % 72 == 0)
+				else
 				{
-					total = total - 1;
+					yearCount++;
+					if(yearCount % 30 == 0)
+					{
+						total = total + 1;
+					}
+					if(yearCount % 72 == 0)
+					{
+						total = total - 1;
+					}
 				}
 			}
 			else
